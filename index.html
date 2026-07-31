@@ -690,6 +690,60 @@
       color: var(--border);
     }
 
+    #problema.problem-section {
+      background: #eef2fa;
+    }
+
+    .icon-alert {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 9999px;
+      background: rgba(239, 68, 68, 0.12);
+      color: #ef4444;
+      display: grid;
+      place-items: center;
+    }
+
+    .icon-alert svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .problem-quote {
+      margin-top: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      max-width: 44rem;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .problem-quote-icon {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .problem-quote-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .problem-quote p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--muted-foreground);
+    }
+
+    .problem-quote strong {
+      color: var(--primary);
+    }
+
     .card h3 {
       font-size: 1rem;
       font-weight: 600;
@@ -1294,70 +1348,76 @@
   </section>
 
   <!-- Problema -->
-  <section id="problema">
+  <section id="problema" class="problem-section">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">O problema</span>
-        <h2>Erros caros que só aparecem quando o fisco bate à porta</h2>
+        <h2>Você sabe exatamente quanto sua clínica paga a mais de imposto?</h2>
         <p>
-          A maioria das PJs da saúde no Brasil paga mais imposto do que deveria porque o contador não conhece as especificidades da área médica.
+          A maioria dos profissionais da saúde com PJ não sabe. E enquanto não sabe, continua pagando. Estes são os erros que encontramos toda semana.
         </p>
       </div>
       <div class="cards-grid">
         <div class="card">
           <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </span>
           </div>
           <h3>Regime tributário errado</h3>
-          <p>Simples, Presumido ou Real escolhidos sem comparativo real de projeção de faturamento.</p>
+          <p>Simples Nacional, Lucro Presumido ou Real — cada caso tem uma resposta específica, que muda conforme o faturamento e o tipo de receita.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </span>
-          </div>
-          <h3>Patrimônio exposto</h3>
-          <p>Bens pessoais no mesmo CNPJ da operação, sem holding ou separação societária.</p>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </span>
           </div>
           <h3>Equiparação hospitalar ignorada</h3>
-          <p>Clínicas elegíveis pagando alíquota plena de IRPJ e CSLL por falta de análise técnica.</p>
+          <p>Clínicas e centros que cumprem os requisitos legais podem reduzir drasticamente IRPJ e CSLL. A maioria nunca foi avaliada.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v5h5"/><path d="M2 15h10"/><path d="m5 12-3 3 3 3"/></svg>
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </span>
           </div>
-          <h3>Créditos não aproveitados</h3>
-          <p>Recolhimentos indevidos, deduções esquecidas e revisão fiscal nunca feita.</p>
+          <h3>Pró-labore definido sem critério</h3>
+          <p>Alto demais gera INSS desnecessário. Baixo demais levanta alerta na Receita Federal. O ponto ótimo é calculado, não estimado.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </span>
           </div>
-          <h3>Endereço fiscal inadequado</h3>
-          <p>Alíquota de ISS mais alta do que o necessário e licenças sanitárias em risco.</p>
+          <h3>Distribuição de lucros incorreta</h3>
+          <p>Estruturada certo, é isenta de Imposto de Renda. Feita errado, vira passivo tributário com multa e juros.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </span>
           </div>
-          <h3>Pró-labore mal dimensionado</h3>
-          <p>Retirada de pro-labore que onera INSS e IR sem estratégia de distribuição de lucros.</p>
+          <h3>Patrimônio pessoal exposto</h3>
+          <p>Clínicas sem holding familiar colocam imóveis, veículos e investimentos do sócio na linha de risco.</p>
         </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="icon-alert">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </span>
+          </div>
+          <h3>Sem revisão fiscal nos últimos 5 anos</h3>
+          <p>Há créditos tributários a recuperar e deduções não aproveitadas que, em muitos casos, somam dezenas de milhares de reais.</p>
+        </div>
+      </div>
+      <div class="problem-quote">
+        <span class="problem-quote-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        </span>
+        <p>Cada mês sem planejamento tributário adequado é dinheiro que não volta. <strong>A questão não é se você está pagando a mais — é quanto.</strong></p>
       </div>
     </div>
   </section>
