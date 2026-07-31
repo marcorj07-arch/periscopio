@@ -1187,10 +1187,17 @@
       text-align: center;
     }
 
+    .final-cta .eyebrow {
+      margin-bottom: 1rem;
+    }
+
     .final-cta h2 {
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      max-width: 32rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media (min-width: 640px) {
@@ -1207,10 +1214,29 @@
       margin-right: auto;
     }
 
+    .final-cta-badges {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.625rem;
+    }
+
+    .final-cta-badge {
+      display: inline-block;
+      padding: 0.375rem 0.875rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(248, 250, 252, 0.85);
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
     /* Footer */
     .site-footer {
-      background: #080c14;
-      color: rgba(248, 250, 252, 0.65);
+      background: #eef2fa;
+      color: var(--muted-foreground);
       padding: 2.5rem 0;
       font-size: 0.875rem;
     }
@@ -1235,7 +1261,7 @@
     .footer-brand {
       font-size: 1.125rem;
       font-weight: 600;
-      color: var(--primary-foreground);
+      color: var(--primary);
       margin-bottom: 0.75rem;
     }
 
@@ -1243,32 +1269,42 @@
       color: var(--accent);
     }
 
+    .footer-crc {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+
     .footer-col h4 {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      color: var(--primary-foreground);
+      color: var(--primary);
       margin-bottom: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .footer-col a {
+    .footer-col a,
+    .footer-col span,
+    .footer-col p {
       display: block;
       padding: 0.25rem 0;
+      color: var(--accent);
       transition: color 0.2s;
     }
 
     .footer-col a:hover {
-      color: var(--primary-foreground);
+      color: var(--primary);
     }
 
     .footer-bottom {
       margin-top: 2rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid var(--border);
       text-align: center;
       font-size: 0.75rem;
-      color: rgba(248, 250, 252, 0.45);
+      color: var(--muted);
     }
 
     /* Floating WhatsApp */
@@ -1280,11 +1316,11 @@
       width: 3.5rem;
       height: 3.5rem;
       border-radius: 9999px;
-      background: var(--success);
-      color: var(--primary-foreground);
+      background: linear-gradient(180deg, #2fdc5d 0%, #25c94e 45%, #1da851 100%);
+      color: #ffffff;
       display: grid;
       place-items: center;
-      box-shadow: var(--shadow-elevated);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
       transition: transform 0.2s;
     }
 
@@ -1858,11 +1894,18 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Menos imposto, mais segurança para sua clínica</h2>
-      <p>Descubra em uma conversa rápida quanto sua PJ da saúde pode economizar com planejamento tributário correto.</p>
-      <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+      <span class="eyebrow">Próximo passo</span>
+      <h2>Cada mês sem planejamento é dinheiro que não volta.</h2>
+      <p>A análise inicial leva menos de 30 minutos e já entrega clareza sobre o que está sendo pago a mais — incluindo a checagem de equiparação hospitalar.</p>
+      <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
         Solicitar Análise Tributária
       </a>
+      <div class="final-cta-badges">
+        <span class="final-cta-badge">Sem custo</span>
+        <span class="final-cta-badge">Sem compromisso</span>
+        <span class="final-cta-badge">100% dentro da lei</span>
+        <span class="final-cta-badge">Atendemos todo o Brasil</span>
+      </div>
     </div>
   </section>
 
@@ -1872,26 +1915,20 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Periscópio <span>Contabilidade</span></div>
-          <p style="max-width: 24rem; margin-bottom: 1rem;">
-            Equiparação hospitalar, recuperação de impostos e planejamento tributário para profissionais da saúde em Brasília e no Brasil.
+          <p style="max-width: 24rem;">
+            Contabilidade e planejamento tributário para profissionais da saúde, com clareza, compromisso e transparência.
           </p>
-          <p style="font-size: 0.8125rem;">
-            SIA Trecho 3, Lotes 1310/20 · Taya Centro Empresarial · Sala 214 · Brasília-DF
-          </p>
+          <span class="footer-crc">CRC-DF 004227/O</span>
         </div>
         <div class="footer-col">
           <h4>Contato</h4>
-          <a href="mailto:periscopiocontabilidade@gmail.com">periscopiocontabilidade@gmail.com</a>
           <a href="tel:+5561993718806">(61) 9 9371-8806</a>
-          <span>Seg–Sex · 08:00–18:00</span>
+          <a href="mailto:periscopiocontabilidade@gmail.com">periscopiocontabilidade@gmail.com</a>
+          <span>Seg-Sex · 08:00-18:00</span>
         </div>
         <div class="footer-col">
-          <h4>Links</h4>
-          <a href="#problema">O problema</a>
-          <a href="#solucoes">Soluções</a>
-          <a href="#planejamento">Planejamento</a>
-          <a href="#especialista">Especialista</a>
-          <a href="#contato">Contato</a>
+          <h4>Endereço</h4>
+          <span>SIA Trecho 3, Lotes 1310/20 · Taya Centro Empresarial · Sala 214 · Brasília-DF · 71200-030</span>
         </div>
       </div>
       <div class="footer-bottom">
@@ -1902,7 +1939,7 @@
 
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.36.101 11.943c0 2.105.549 4.16 1.595 5.976L0 24l6.223-1.634a11.9 11.9 0 005.822 1.483h.005c6.582 0 11.94-5.36 11.943-11.943a11.86 11.86 0 00-3.473-8.457"/></svg>
   </a>
 
   <script>
