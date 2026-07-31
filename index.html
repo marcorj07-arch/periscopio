@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contabilidade para Médicos e Clínicas em Brasília | Periscópio</title>
+  <meta name="description" content="Equiparação hospitalar, recuperação de impostos e planejamento tributário para médicos, clínicas, hospitais, dentistas e veterinários em Brasília-DF." />
+  <meta property="og:title" content="Contabilidade para Médicos e Clínicas em Brasília | Periscópio" />
+  <meta property="og:description" content="Equiparação hospitalar, recuperação de impostos e planejamento tributário para médicos, clínicas, hospitais, dentistas e veterinários em Brasília-DF." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-foreground: #f8fafc;
+      --accent: #3b82f6;
+      --accent-foreground: #ffffff;
+      --background: #ffffff;
+      --foreground: #0f172a;
+      --card: #ffffff;
+      --card-elevated: #ffffff;
+      --border: #e2e8f0;
+      --muted: #64748b;
+      --muted-foreground: #475569;
+      --secondary: #f1f5f9;
+      --success: #10b981;
+      --navy: #0b1220;
+      --steel: #1e293b;
+      --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
+      --shadow-elevated: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+      --radius: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: none;
+      background: var(--navy);
+      color: rgba(248, 250, 252, 0.7);
+      padding: 0.5rem 0;
+      font-size: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .top-bar {
+        display: block;
+      }
+    }
+
+    .top-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .top-bar a,
+    .top-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .top-bar a:hover {
+      color: var(--primary-foreground);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    }
+
+    .header-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+    }
+
+    @media (min-width: 1024px) {
+      .header-inner {
+        padding: 1rem 0;
+      }
+    }
+
+    .brand {
+      min-width: 0;
+      line-height: 1.25;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: 640px) {
+      .brand-name {
+        font-size: 1.125rem;
+      }
+    }
+
+    .brand-name span {
+      color: var(--accent);
+    }
+
+    .brand-meta {
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    @media (min-width: 1024px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      border-radius: 0.375rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 0.5rem;
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-primary:hover {
+      background: var(--steel);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-lg {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+      min-height: 3rem;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: grid;
+      width: 2.75rem;
+      height: 2.75rem;
+      place-items: center;
+      border-radius: 0.375rem;
+      color: var(--primary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (min-width: 1024px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: var(--background);
+      padding: 0 1rem 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .mobile-nav {
+        padding: 0 1.5rem 1rem;
+      }
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    .mobile-nav .btn {
+      margin-top: 1rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3rem 0;
+      background: linear-gradient(180deg, var(--background) 0%, #f8fafc 100%);
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        padding: 4rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 5rem 0;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: 1.875rem;
+      line-height: 1.15;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    @media (min-width: 640px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .hero p.lead {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 640px) {
+      .hero p.lead {
+        font-size: 1.125rem;
+      }
+    }
+
+    .hero-benefits {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: var(--foreground);
+    }
+
+    .icon-check {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      margin-top: 0.125rem;
+    }
+
+    .icon-check svg {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    .hero-ctas {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-ctas {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .placeholder-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 16rem;
+      border-radius: var(--radius);
+      background: #f1f5f9;
+      border: 1.5px dashed #cbd5e1;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (min-width: 640px) {
+      .placeholder-media {
+        min-height: 20rem;
+      }
+    }
+
+    .placeholder-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+    }
+
+    .placeholder-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .placeholder-label {
+      max-width: 24ch;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .authority-badges {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.875rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      box-shadow: var(--shadow);
+    }
+
+    .badge svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+
+    @media (min-width: 640px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      section {
+        padding: 5rem 0;
+      }
+    }
+
+    .section-header {
+      max-width: 48rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .section-header h2 {
+        font-size: 1.875rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .section-header p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 640px) {
+      .section-header p {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .card-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background: #f1f5f9;
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+    }
+
+    .card-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .card-number {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--border);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--muted-foreground);
+    }
+
+    /* Navy section */
+    .navy-section {
+      background: var(--navy);
+      color: var(--primary-foreground);
+    }
+
+    .navy-section .eyebrow {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .navy-section h2 {
+      color: var(--primary-foreground);
+    }
+
+    .navy-section .section-header p {
+      color: rgba(248, 250, 252, 0.75);
+    }
+
+    .pillars-grid {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pillar {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      background: rgba(59, 130, 246, 0.25);
+      color: var(--primary-foreground);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .pillar-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .pillar-step {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(248, 250, 252, 0.55);
+    }
+
+    .pillar h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: rgba(248, 250, 252, 0.75);
+    }
+
+    .navy-cta {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    @media (min-width: 640px) {
+      .navy-cta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+    }
+
+    .navy-cta p {
+      max-width: 40rem;
+      color: rgba(248, 250, 252, 0.8);
+    }
+
+    /* Transformation section */
+    .two-col {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .checklist {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 640px) {
+      .checklist-item {
+        font-size: 1rem;
+      }
+    }
+
+    /* Specialist */
+    .specialist-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .specialist-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 3rem;
+      }
+    }
+
+    .specialist-card {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .specialist-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .specialist-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .specialist-card li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+      color: var(--muted-foreground);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 3rem;
+        align-items: start;
+      }
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .faq-question svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--muted-foreground);
+    }
+
+    .contact-form {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-elevated);
+    }
+
+    @media (min-width: 640px) {
+      .contact-form {
+        padding: 2rem;
+      }
+    }
+
+    .contact-form h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form > p {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 0.375rem;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--background);
+      color: var(--foreground);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 6rem;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: var(--navy);
+      color: var(--primary-foreground);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .final-cta h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .final-cta p {
+      color: rgba(248, 250, 252, 0.75);
+      margin-bottom: 1.5rem;
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #080c14;
+      color: rgba(248, 250, 252, 0.65);
+      padding: 2.5rem 0;
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--primary-foreground);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand span {
+      color: var(--accent);
+    }
+
+    .footer-col h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-foreground);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col a {
+      display: block;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary-foreground);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(248, 250, 252, 0.45);
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 9999px;
+      background: var(--success);
+      color: var(--primary-foreground);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-elevated);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
+
+    .whatsapp-float svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* Utilities */
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-8 { margin-top: 2rem; }
+    .hidden-sm { display: none; }
+
+    @media (min-width: 640px) {
+      .hidden-sm { display: inline-flex; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <a href="mailto:periscopiocontabilidade@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          periscopiocontabilidade@gmail.com
+        </a>
+        <a href="tel:+5561993718806">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (61) 9 9371-8806
+        </a>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Seg–Sex · 08:00–18:00
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="brand">
+          <span class="brand-name">Periscópio <span>Contabilidade</span></span>
+          <span class="brand-meta">CRC-DF 031497/O · Brasília-DF</span>
+        </a>
+        <div class="header-actions">
+          <nav class="desktop-nav">
+            <a href="#problema" class="nav-link">O problema</a>
+            <a href="#solucoes" class="nav-link">Soluções</a>
+            <a href="#planejamento" class="nav-link">Planejamento</a>
+            <a href="#especialista" class="nav-link">Especialista</a>
+            <a href="#contato" class="nav-link">Contato</a>
+          </nav>
+          <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-sm hidden-sm">
+            Solicitar Análise Tributária
+          </a>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#problema" onclick="closeMenu()">O problema</a>
+      <a href="#solucoes" onclick="closeMenu()">Soluções</a>
+      <a href="#planejamento" onclick="closeMenu()">Planejamento</a>
+      <a href="#especialista" onclick="closeMenu()">Especialista</a>
+      <a href="#contato" onclick="closeMenu()">Contato</a>
+      <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-full">
+        Solicitar Análise Tributária
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Contabilidade especializada</span>
+          <h1>Sua clínica paga imposto demais. A gente prova e reduz.</h1>
+          <p class="lead">
+            Planejamento tributário, equiparação hospitalar e recuperação de créditos para médicos, dentistas, clínicas e veterinários em Brasília e em todo o Brasil.
+          </p>
+          <div class="hero-benefits">
+            <div class="hero-benefit">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Diagnóstico tributário sem custo
+            </div>
+            <div class="hero-benefit">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Equiparação hospitalar para clínicas elegíveis
+            </div>
+            <div class="hero-benefit">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Recuperação de impostos dos últimos 5 anos
+            </div>
+          </div>
+          <div class="hero-ctas">
+            <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              Solicitar Análise Tributária
+            </a>
+            <a href="#solucoes" class="btn btn-secondary btn-lg">
+              Ver como funciona
+            </a>
+          </div>
+          <div class="authority-badges">
+            <span class="badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              25 anos de experiência
+            </span>
+            <span class="badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Foco em saúde
+            </span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="placeholder-media" role="img" aria-label="Foto de clínica médica em Brasília">
+            <span class="placeholder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </span>
+            <span class="placeholder-label">[Foto: Clínica médica em Brasília]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema -->
+  <section id="problema">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">O problema</span>
+        <h2>Erros caros que só aparecem quando o fisco bate à porta</h2>
+        <p>
+          A maioria das PJs da saúde no Brasil paga mais imposto do que deveria porque o contador não conhece as especificidades da área médica.
+        </p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            </span>
+          </div>
+          <h3>Regime tributário errado</h3>
+          <p>Simples, Presumido ou Real escolhidos sem comparativo real de projeção de faturamento.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </span>
+          </div>
+          <h3>Patrimônio exposto</h3>
+          <p>Bens pessoais no mesmo CNPJ da operação, sem holding ou separação societária.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+          </div>
+          <h3>Equiparação hospitalar ignorada</h3>
+          <p>Clínicas elegíveis pagando alíquota plena de IRPJ e CSLL por falta de análise técnica.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v5h5"/><path d="M2 15h10"/><path d="m5 12-3 3 3 3"/></svg>
+            </span>
+          </div>
+          <h3>Créditos não aproveitados</h3>
+          <p>Recolhimentos indevidos, deduções esquecidas e revisão fiscal nunca feita.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+          </div>
+          <h3>Endereço fiscal inadequado</h3>
+          <p>Alíquota de ISS mais alta do que o necessário e licenças sanitárias em risco.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+          </div>
+          <h3>Pró-labore mal dimensionado</h3>
+          <p>Retirada de pro-labore que onera INSS e IR sem estratégia de distribuição de lucros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluções -->
+  <section id="solucoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">O que fazemos</span>
+        <h2>Gestão tributária desenhada para a realidade da saúde</h2>
+        <p>
+          Cada frente do nosso trabalho foi construída para médicos, clínicas, hospitais, dentistas e veterinários — não adaptada de um modelo genérico.
+        </p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <span class="card-number">01</span>
+          </div>
+          <h3>Diagnóstico Tributário</h3>
+          <p>Análise completa do regime atual, do pró-labore e das obrigações acessórias, com cálculo estimado de economia anual.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M14 21v-5a2 2 0 0 0-4 0v5"/></svg>
+            </span>
+            <span class="card-number">02</span>
+          </div>
+          <h3>Equiparação Hospitalar</h3>
+          <p>Avaliação técnica dos requisitos legais e implementação para reduzir a base de cálculo de IRPJ e CSLL de clínicas elegíveis.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg>
+            </span>
+            <span class="card-number">03</span>
+          </div>
+          <h3>Recuperação de Impostos</h3>
+          <p>Revisão dos últimos 5 anos para identificar e recuperar créditos tributários e valores recolhidos indevidamente.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 14l2 2 4-4"/></svg>
+            </span>
+            <span class="card-number">04</span>
+          </div>
+          <h3>Estruturação Corporativa</h3>
+          <p>Contrato social, regime tributário, pró-labore e distribuição de lucros desenhados para a atividade de saúde.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg>
+            </span>
+            <span class="card-number">05</span>
+          </div>
+          <h3>Planejamento Contínuo</h3>
+          <p>Revisão mensal da carga tributária, com ajustes conforme a variação de faturamento e mudanças na legislação.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="card-number">06</span>
+          </div>
+          <h3>Proteção Patrimonial</h3>
+          <p>Holding familiar e separação entre bens pessoais e riscos da operação clínica ou hospitalar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planejamento -->
+  <section id="planejamento" class="navy-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Planejamento estratégico</span>
+        <h2>Os cinco pilares da estruturação da sua empresa</h2>
+        <p>
+          A contabilidade precisa acompanhar a carreira do profissional de saúde desde o primeiro dia. Decisões tomadas na abertura definem quanto imposto será pago pelos próximos dez anos.
+        </p>
+      </div>
+      <ol class="pillars-grid">
+        <li class="pillar">
+          <div class="pillar-header">
+            <span class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </span>
+            <span class="pillar-step">Etapa 01</span>
+          </div>
+          <h3>Avaliação do regime tributário</h3>
+          <p>Comparativo entre Simples Nacional, Lucro Presumido e Lucro Real com projeção de faturamento — e verificação da elegibilidade à equiparação hospitalar.</p>
+        </li>
+        <li class="pillar">
+          <div class="pillar-header">
+            <span class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="pillar-step">Etapa 02</span>
+          </div>
+          <h3>Definição do endereço fiscal</h3>
+          <p>A escolha do município e do imóvel altera a alíquota de ISS e a viabilidade de licenças sanitárias. Definimos antes de abrir, não depois.</p>
+        </li>
+        <li class="pillar">
+          <div class="pillar-header">
+            <span class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M14 21v-5a2 2 0 0 0-4 0v5"/></svg>
+            </span>
+            <span class="pillar-step">Etapa 03</span>
+          </div>
+          <h3>Inscrição municipal e alvarás</h3>
+          <p>Inscrição municipal, CNAE correto, vigilância sanitária e conselho de classe alinhados à atividade real do profissional.</p>
+        </li>
+        <li class="pillar">
+          <div class="pillar-header">
+            <span class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </span>
+            <span class="pillar-step">Etapa 04</span>
+          </div>
+          <h3>Estrutura da empresa</h3>
+          <p>Tipo societário, quadro de sócios, cláusulas de saída e pró-labore definidos para suportar o crescimento da carreira sem reestruturações caras.</p>
+        </li>
+        <li class="pillar">
+          <div class="pillar-header">
+            <span class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/></svg>
+            </span>
+            <span class="pillar-step">Etapa 05</span>
+          </div>
+          <h3>Emissão de notas fiscais</h3>
+          <p>Enquadramento de honorários, plantões, cessão de uso e reembolsos de convênio, com rotina de emissão e retenções sob controle.</p>
+        </li>
+        <li>
+          <div class="placeholder-media" style="min-height: 100%; height: 100%; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.7);" role="img" aria-label="Imagem de consultório odontológico ou veterinário recém-inaugurado">
+            <span class="placeholder-icon" style="background: rgba(255,255,255,0.1);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </span>
+            <span class="placeholder-label">[Imagem: Consultório recém-inaugurado]</span>
+          </div>
+        </li>
+      </ol>
+      <div class="navy-cta">
+        <p>Está abrindo a sua empresa agora ou já opera há anos com uma estrutura montada às pressas? Nos dois casos, a revisão dos pilares é o ponto de partida.</p>
+        <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20quero%20revisar%20a%20estrutura%C3%A7%C3%A3o%20da%20minha%20empresa%20da%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="white-space: nowrap;">
+          Revisar minha estrutura
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformação -->
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <div class="placeholder-media" role="img" aria-label="Foto de profissional de saúde sorrindo em consulta">
+            <span class="placeholder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </span>
+            <span class="placeholder-label">[Foto: Profissional de saúde sorrindo em consulta]</span>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">A transformação</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.75rem;">Como fica sua empresa depois do planejamento correto</h2>
+          <ul class="checklist">
+            <li class="checklist-item">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Carga tributária calculada e previsível, sem surpresas em DARF.
+            </li>
+            <li class="checklist-item">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Distribuição de lucros isenta de IR, estruturada dentro da lei.
+            </li>
+            <li class="checklist-item">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Patrimônio pessoal isolado dos riscos jurídicos da operação.
+            </li>
+            <li class="checklist-item">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Contador que entende plantão, convênio, cessão de uso e equiparação hospitalar.
+            </li>
+            <li class="checklist-item">
+              <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Obrigações entregues no prazo, com alertas antes — não depois.
+            </li>
+          </ul>
+          <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-lg mt-8">
+            Solicitar Análise Tributária
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especialista -->
+  <section id="especialista">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">O especialista</span>
+        <h2>Quem cuida da sua contabilidade</h2>
+      </div>
+      <div class="specialist-grid">
+        <div>
+          <div class="placeholder-media" style="min-height: 20rem;" role="img" aria-label="Foto do Dr. Marco Periscópio">
+            <span class="placeholder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </span>
+            <span class="placeholder-label">[Foto: Dr. Marco Periscópio]</span>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Dr. Marco Periscópio</h2>
+          <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">
+            Contador com mais de 25 anos de experiência e pós-graduação em Direito Tributário. Atua exclusivamente com profissionais da saúde, entendendo na prática os desafios de plantões, convênios, honorários e estruturação societária.
+          </p>
+          <div class="specialist-card">
+            <h3>Transição segura de contador</h3>
+            <ul>
+              <li>
+                <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Migração completa de documentos e obrigações.
+              </li>
+              <li>
+                <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Revisão tributária retroativa dos últimos 5 anos.
+              </li>
+              <li>
+                <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Atendimento presencial em Brasília e online para todo o Brasil.
+              </li>
+              <li>
+                <span class="icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Comunicação direta, sem burocracia e em linguagem clara.
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20equipara%C3%A7%C3%A3o%20hospitalar%20e%20redu%C3%A7%C3%A3o%20de%20impostos." target="_blank" rel="noopener" class="btn btn-primary btn-lg mt-4">
+            Falar com o especialista
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.75rem; margin-bottom: 1.5rem;">Respostas diretas antes da conversa</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button" onclick="toggleFaq(this)">
+                O que é equiparação hospitalar e minha clínica se enquadra?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>É o direito de clínicas que prestam serviços hospitalares e cumprem requisitos da ANVISA e da legislação fiscal de apurar IRPJ e CSLL com percentuais de presunção reduzidos. A elegibilidade depende da estrutura física, dos procedimentos realizados e da documentação. Avaliamos isso na análise inicial.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" onclick="toggleFaq(this)">
+                É possível recuperar impostos já pagos?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Sim. A revisão fiscal alcança os últimos 5 anos e frequentemente identifica recolhimentos indevidos, deduções não aproveitadas e créditos a restituir ou compensar.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" onclick="toggleFaq(this)">
+                Preciso trocar de contador para começar?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Não. A análise tributária é independente. Se decidir migrar, conduzimos toda a transição de documentos e obrigações.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" onclick="toggleFaq(this)">
+                Atendem fora de Brasília?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Sim. O atendimento é presencial no SIA e 100% online para todo o Brasil, com a mesma profundidade técnica.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button" onclick="toggleFaq(this)">
+                Tudo isso é legal?
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Integralmente. Trabalhamos com elisão fiscal: escolha de regime, estruturação societária e enquadramento correto de receitas, sempre com respaldo em lei e jurisprudência.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Solicitar Análise Tributária</h3>
+          <p>Preencha e envie pelo WhatsApp. Resposta no mesmo dia útil, sem custo e sem compromisso.</p>
+          <form onsubmit="sendWhatsApp(event)">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" class="form-control" placeholder="Dr. / Dra." required />
+            </div>
+            <div class="form-group">
+              <label for="especialidade">Área de atuação</label>
+              <input type="text" id="especialidade" class="form-control" placeholder="Ex.: clínica médica, odontologia, veterinária" />
+            </div>
+            <div class="form-group">
+              <label for="faturamento">Faturamento mensal aproximado</label>
+              <input type="text" id="faturamento" class="form-control" placeholder="Ex.: R$ 80.000" />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Como podemos ajudar?</label>
+              <textarea id="mensagem" class="form-control" rows="4" placeholder="Descreva brevemente a sua situação atual."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-full">Enviar pelo WhatsApp</button>
+            <p class="form-note">Seus dados são usados apenas para o contato inicial.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Menos imposto, mais segurança para sua clínica</h2>
+      <p>Descubra em uma conversa rápida quanto sua PJ da saúde pode economizar com planejamento tributário correto.</p>
+      <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+        Solicitar Análise Tributária
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Periscópio <span>Contabilidade</span></div>
+          <p style="max-width: 24rem; margin-bottom: 1rem;">
+            Equiparação hospitalar, recuperação de impostos e planejamento tributário para profissionais da saúde em Brasília e no Brasil.
+          </p>
+          <p style="font-size: 0.8125rem;">
+            SIA Trecho 3, Lotes 1310/20 · Taya Centro Empresarial · Sala 214 · Brasília-DF
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="mailto:periscopiocontabilidade@gmail.com">periscopiocontabilidade@gmail.com</a>
+          <a href="tel:+5561993718806">(61) 9 9371-8806</a>
+          <span>Seg–Sex · 08:00–18:00</span>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <a href="#problema">O problema</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#planejamento">Planejamento</a>
+          <a href="#especialista">Especialista</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Periscópio Contabilidade. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/5561993718806?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20solicitar%20a%20an%C3%A1lise%20tribut%C3%A1ria%20da%20minha%20PJ%20da%20sa%C3%BAde." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.querySelector('.menu-toggle');
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      btn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.querySelector('.menu-toggle');
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menu');
+    }
+
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    }
+
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const especialidade = document.getElementById('especialidade').value;
+      const faturamento = document.getElementById('faturamento').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const texto = `Olá, sou ${nome || 'profissional da saúde'}${especialidade ? ` (${especialidade})` : ''} e quero solicitar a análise tributária.${faturamento ? ` Faturamento mensal aproximado: ${faturamento}.` : ''}${mensagem ? ` ${mensagem}` : ''}`;
+
+      window.open(`https://wa.me/5561993718806?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    }
+  </script>
+</body>
+</html>
